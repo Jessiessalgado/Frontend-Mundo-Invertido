@@ -153,3 +153,88 @@ header::before {
     mask: var(--character-bottom-image-src) bottom / 100% no-repeat;
     -webkit-mask: var(--character-bottom-image-src) bottom / 100% no-repeat;
 }
+
+/* Main Styles */
+main {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+section {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 95px;
+}
+
+/* Sessão 01 Styles */
+.container {
+    max-width: 1200px;    
+}
+
+#section-inverted-world {
+    align-items: center;
+}
+
+#section-inverted-world .section-texts {
+    width: 50%;
+}
+
+#section-inverted-world .section-texts h2 {
+    max-width: 300px;
+}
+
+/* Sessão 02 Styles */
+#section-stranger-things-trailer .section-texts {
+    width: 50%;
+    text-align: right;
+}
+
+#section-stranger-things-trailer .section-texts h2 {
+    max-width: 425px;
+    display: inline-block;
+}
+
+#section-stranger-things-trailer .video-frame {
+    background-color: var(--primary-color);
+}
+
+#section-stranger-things-trailer .video-frame iframe {
+    position: relative;
+    bottom: 24px;
+    left: 24px;
+    border: 2px solid;
+    border-image: linear-gradient(var(--primary-color), var(--primary-color-contrast));
+    border-image-slice: 10;
+}
+
+/* Sessão 03 Styles */
+#ection-stranger-things-gallery .container {
+    width: 100%;
+}
+
+#ection-stranger-things-gallery .container h2 {
+    width: 800px;
+}
+
+#ection-stranger-things-gallery .gallery-container {
+    display: flex;
+    gap: 50px;
+    padding-left: 20px;
+}
+
+#ection-stranger-things-gallery .gallery-image {
+    width: 250px;
+    height: 250px;
+    outline: 20px solid var(--highlight-color);
+    border: 3px solid var(--primary-color);
+    box-sizing: initial;
+}
+
+#ection-stranger-things-gallery .gallery-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border: 10px solid var(--highlight-color);
+}
