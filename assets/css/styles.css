@@ -49,3 +49,34 @@
     --footer-background-color: #000;
 }
 
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+h1, h2, h3 {
+    font-family: var(--featured-font-family);
+    font-size: 3rem;
+    color: var(--primary-color);
+    text-transform: uppercase;
+    margin-bottom: 40px;
+}
+
+p {
+    color: var(--highlight-color);
+}
+
+p, input, textarea, label {
+    font-family: "Libre Baskerville", sans-serif;
+}
+
+button {
+    padding: 16px 32px;
+    background-color: transparent;
+    font-weight: 900;
+    font-family: var(--featured-font-family);
+    font-size: 1.25rem;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background 1s;
+}
