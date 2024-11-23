@@ -49,6 +49,19 @@
     --footer-background-color: #000;
 }
 
+
+.dark-theme button,
+.dark-theme h1,
+.dark-theme h2,
+.dark-theme h3 {
+    letter-spacing: 5px;
+    font-weight: normal;
+}
+
+.dark-theme .invert-element {
+    transform: rotateZ(180deg) scaleX(-1);
+}
+
 * {
     margin: 0;
     box-sizing: border-box;
@@ -79,6 +92,25 @@ button {
     text-transform: uppercase;
     cursor: pointer;
     transition: background 1s;
+}
+
+input, textarea {
+    border: 2px solid var(--primary-color-contrast);
+    background-color: var(--field-background-color);
+    color: var(--primary-color-contrast);
+    padding: 8px;
+    margin-bottom: 24px;
+    font-size: 1rem;
+}
+
+label {
+    margin-bottom: 8px;
+}
+
+input:focus-visible,
+textarea:focus-visible {
+    outline: none;
+    border-color: #000;
 }
 
 /* Header Styles */
@@ -137,7 +169,7 @@ header::before {
 }
 
 .world-characters#top-characters {
-    height: 100px;
+    height: 100%;
     background-color: var(--character-top-image-color);
     bottom: -3px;
     mask: var(--character-top-image-src) bottom / 100% no-repeat;
@@ -160,6 +192,16 @@ main {
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+main::before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background: var(--page-background) no-repeat url("../images/backgrounds/florest.png");
+    background-size: cover;
+    z-index: -1;
 }
 
 section {
@@ -210,31 +252,142 @@ section {
 }
 
 /* Sessão 03 Styles */
-#ection-stranger-things-gallery .container {
+#section-stranger-things-gallery{
+    width: 100%;
+    justify-content: center;
+    background: var(--background-lam-image) 120% / 50% no-repeat;
+}
+
+#section-stranger-things-gallery .container {
     width: 100%;
 }
 
-#ection-stranger-things-gallery .container h2 {
+#section-stranger-things-gallery .container h2 {
     width: 800px;
 }
 
-#ection-stranger-things-gallery .gallery-container {
+#section-stranger-things-gallery .gallery-container {
     display: flex;
     gap: 50px;
     padding-left: 20px;
 }
 
-#ection-stranger-things-gallery .gallery-image {
+#section-stranger-things-gallery .gallery-image {
     width: 250px;
     height: 250px;
     outline: 20px solid var(--highlight-color);
     border: 3px solid var(--primary-color);
-    box-sizing: initial;
+    box-sizing: border-box;
 }
 
-#ection-stranger-things-gallery .gallery-image img {
+#section-stranger-things-gallery .gallery-image img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     border: 10px solid var(--highlight-color);
+}
+
+/* Sessão 04 Dangeus Dragons Forms */
+#section-form {
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+    text-align: center;
+}
+
+#section-form h2 {
+    width: 600px;
+}
+
+#section-form .form-content h3 {
+    color: var(--highlight-color);
+    flex-basis: 30%;
+    text-align: left;
+    margin: 0;
+}
+
+#section-form .form-content h3 span {
+    color: var(--primary-color);
+}
+
+#section-form .form-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#section-form .form-container {
+    flex-basis: 50%;
+    position: relative;
+}
+
+#section-form .form-container::after {
+    content: "";
+    background-color: var(--highlight-color);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 24px;
+    left: 24px;
+    z-index: -1;
+}
+
+#section-form .form-container form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 24px;
+    background-color: var(--primary-color);
+    color: var(--primary-color-contrast);
+    text-align: left;
+}
+
+#section-form .form-container form button {
+    border: none;
+    background-color: var(--field-background-color);
+    max-width: 300px;
+    align-self: center;
+}
+
+#section-form .form-container form button:hover {
+    background-color: var(--primary-color-contrast);
+    color: var(--field-background-color);
+}
+
+/* Footer Style */
+footer {
+    padding: 60px 0;
+    background-color: var(--footer-background-color);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+footer p {
+    max-width: 700px;
+    margin-bottom: 24px;
+}
+
+footer::before,
+footer::after {
+    content: "";
+    width: 300px;
+    height: 200px;
+    background: url(../images/footer/tape.svg) no-repeat;
+    background-size: contain;
+    position: absolute;
+    bottom: -30px;
+}
+
+footer::before {
+    left: -50px;
+    transform: rotateZ(-10deg);
+}
+
+footer::after {
+    right: -50px;
+    transform: rotateZ(10deg);
 }
